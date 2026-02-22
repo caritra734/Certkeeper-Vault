@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Secure your digital legacy on the blockchain with Certkeeper." />
+    <title>Welcome || Vault</title>
+    <link rel="icon"
+        href="https://go.certkeeper.in/l/1032491/2026-02-03/7x1hcw/1032491/1770144578gO2U5NWs/Certkeeper_Favicon___logo.png"
+        type="image/x-icon">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Navbar Styles */
+        .header-container {
+            display: flex;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        .navbar {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            border-radius: 8px;
+            padding: 15px 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #007BFF;
+        }
+
+        .navbar button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        /* Action Section (Button Center Aligned) */
+        .action-container {
+            text-align: center;
+            padding: 20px 5%;
+            margin-bottom: 40px;
+        }
+
+        .add-cert-btn {
+            padding: 18px 40px;
+            font-size: 20px;
+            background-color: #28a745;
+            /* Success Green */
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .add-cert-btn:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
+
+        /* Dashboard Cards Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 0 5% 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #007bff;
+            transition: transform 0.3s ease;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stats-card h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stats-card .value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin: 15px 0;
+        }
+
+        .stats-card.action-card {
+            background-color: #007bff;
+            border-top: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .stats-card.action-card h3,
+        .stats-card.action-card .value {
+            color: white;
+        }
+
+        .stats-card.action-card:hover {
+            background-color: #0056b3;
+        }
+
+        .hero-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .custom-footer {
+            background-color: #222;
+            color: #aaa;
+            padding: 30px 5%;
+            margin-top: 40px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-brand {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-brand b {
+            color: #fff;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #007bff;
+        }
+
+        .footer-desc {
+            max-width: 400px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            text-align: right;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image-container {
+                justify-content: center;
+            }
+
+            .header-container {
+                flex-direction: column;
+            }
+
+            .logo {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-desc {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header-container">
+        <img src="https://go.certkeeper.in/l/1032491/2026-02-03/7x1hcw/1032491/1770144578gO2U5NWs/Certkeeper_Favicon___logo.png"
+            alt="Certkeeper Logo" class="logo">
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="login-signup">
+                <button onclick="window.location.href='#login'">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Welcome Back!<br></h1>
+                <p>Find all your uploaded documents here. Use the dashboard below to manage your digital legacy.</p>
+            </div>
+
+            <div class="hero-image-container">
+                <img src="https://go.certkeeper.in/l/1032491/2026-02-06/7x9cn6/1032491/17703975294wLdw58j/Generic_tech.png"
+                    alt="Generic-tech-blockchain">
+            </div>
+        </section>
+
+        <!-- Centered Add Certificate Button -->
+        <section class="action-container">
+            <button class="add-cert-btn">
+                <span>+</span> Add Certificate
+            </button>
+        </section>
+
+        <!-- Dashboard Stat Cards -->
+        <section class="dashboard-grid">
+            <div class="stats-card">
+                <h3>Total Certificates</h3>
+                <div class="value">12</div>
+                <p>Active on Blockchain</p>
+            </div>
+
+            <div class="stats-card">
+                <h3>Vault Storage Used</h3>
+                <div class="value">45%</div>
+                <div style="background: #eee; border-radius: 10px; height: 10px; overflow: hidden;">
+                    <div style="background: #007bff; width: 45%; height: 100%;"></div>
+                </div>
+            </div>
+
+            <div class="stats-card action-card" onclick="window.location.href='#view-all'">
+                <h3>Your Vault</h3>
+                <div class="value">View All</div>
+                <p>Access your full history</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

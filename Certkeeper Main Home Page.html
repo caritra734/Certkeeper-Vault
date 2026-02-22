@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Secure your digital legacy on the blockchain with Certkeeper." />
+    <title>Certkeeper || Home</title>
+    <link rel="icon"
+        href="https://go.certkeeper.in/l/1032491/2026-02-03/7x1hcw/1032491/1770144578gO2U5NWs/Certkeeper_Favicon___logo.png"
+        type="image/x-icon">
+
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Navbar Styles */
+        .header-container {
+            display: flex;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+        }
+
+        .navbar {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            border-radius: 8px;
+            padding: 15px 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: #007BFF;
+        }
+
+        .navbar button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Hero Section (Flexbox Layout) */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Right Aligned Image Styles */
+        .hero-image-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .services-section {
+            padding: 80px 5%;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            padding: 30px;
+            background: #fdfdfd;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card img {
+            width: 120px;
+            /* Adjust size as needed */
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image-container {
+                justify-content: center;
+            }
+
+            .header-container {
+                flex-direction: column;
+            }
+
+            .logo {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+
+            .nav-links {
+                display: none;
+                /* Consider a burger menu for mobile */
+            }
+        }
+
+        .how-it-works-section {
+            padding: 80px 5%;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .how-it-works-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .how-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .how-card {
+            flex: 1;
+            min-width: 250px;
+            padding: 40px 20px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #eee;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .how-card h3 {
+            color: #333;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .how-card .step-num {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+
+        .custom-footer {
+            background-color: #222;
+            color: #aaa;
+            padding: 30px 5%;
+            margin-top: 40px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-brand {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-brand b {
+            color: #fff;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #007bff;
+        }
+
+        .footer-desc {
+            max-width: 400px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            text-align: right;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image-container {
+                justify-content: center;
+            }
+
+            .header-container {
+                flex-direction: column;
+            }
+
+            .logo {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-desc {
+                text-align: center;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header class="header-container">
+        <img src="https://go.certkeeper.in/l/1032491/2026-02-03/7x1hcw/1032491/1770144578gO2U5NWs/Certkeeper_Favicon___logo.png"
+            alt="Certkeeper Logo" class="logo">
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="https://go.certkeeper.in/l/1032491/2026-02-06/7x9cn3">Home</a>
+                <a href="https://go.certkeeper.in/l/1032491/2026-02-06/7x9cnh">Services</a>
+                <a href="https://go.certkeeper.in/l/1032491/2026-02-06/7x9cnh">About Us</a>
+                <a href="https://go.certkeeper.in/l/1032491/2026-02-07/7xbp1z">Contact Us</a>
+            </div>
+            <div class="login-signup">
+                <button onclick="window.location.href='https://go.certkeeper.in/l/1032491/2026-02-05/7x828l'">Login /
+                    Signup</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="hero-section">
+        <!-- Left Side: Text Content -->
+        <div class="hero-content">
+            <h1>Secure Your<br>Digital Legacy on the<br>Blockchain</h1>
+            <p>Upload certificates, create a secure digital vault, and ensure immutable access for a lifetime.</p>
+            <button class="cta-button"
+                onclick="window.location.href='https://go.certkeeper.in/l/1032491/2026-02-06/7x9cmw'">Get Started -
+                Create Vault</button>
+        </div>
+
+        <!-- Right Side: Happy Customer Image -->
+        <div class="hero-image-container">
+            <img src="https://go.certkeeper.in/l/1032491/2026-02-04/7x5fhs/1032491/1770235896KW0aDzvi/Happy_customer_hero_image.png"
+                alt="Happy customer hero image">
+        </div>
+    </main>
+
+    <!-- Core Services Section -->
+    <section class="services-section" id="services">
+        <h2>Core Services Offered</h2>
+        <div class="services-container">
+            <!-- Service 1 -->
+            <div class="service-card">
+
+                <img src="	https://go.certkeeper.in/l/1032491/2026-02-05/7x8289/1032491/17703217337lqC8RQU/Certificate.jpg"
+                    alt="Certificate Upload Icon">
+                <h3>Certificate Upload</h3>
+                <p>(Securely store and verify)</p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+
+                <img src="	https://go.certkeeper.in/l/1032491/2026-02-05/7x828d/1032491/1770324328Lr3JfSnY/vault.jpg"
+                    alt="Digital Vault Icon">
+                <h3>Digital Vault</h3>
+                <p>(Private, encrypted storage)</p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+
+                <img src="https://cdn-icons-png.flaticon.com/512/2092/2092663.png" alt="Blockchain Security Icon">
+                <h3>Blockchain Security</h3>
+                <p>(Decentralized & Immutable)</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works-section">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 50px; color: #222;">How It Works</h2>
+
+            <div class="how-it-works-container">
+                <!-- Step 1 -->
+                <div class="how-card">
+                    <span class="step-num">1</span>
+                    <h3>Create Account</h3>
+                    <p>Register your identity securely to begin your digital legacy journey.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="how-card">
+                    <span class="step-num">2</span>
+                    <h3>Upload & Encrypt</h3>
+                    <p>Drag and drop your files. Our system encrypts them before they reach the blockchain.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="how-card">
+                    <span class="step-num">3</span>
+                    <h3>Access Anytime</h3>
+                    <p>Your vault is permanent. Retrieve your certificates globally, whenever you need them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="custom-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="https://go.certkeeper.in/l/1032491/2026-02-06/7x9cnh">About Us</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div style="max-width: 300px;">
+                <p style="color: #888; font-size: 0.9rem;">
+                    Certkeeper leverages blockchain technology to provide immutable storage for your most important
+                    documents.
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Certkeeper. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
